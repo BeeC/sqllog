@@ -5,11 +5,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.Properties;
 
-/**
- * @author : liyifei
- * @created : 2023/11/3, 星期五
- * Copyright (c) 2004-2029 All Rights Reserved.
- **/
 @ConfigurationProperties(prefix = "sqllogging")
 @Data
 public class SqlLogProperties {

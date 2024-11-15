@@ -27,7 +27,12 @@ public class ClassRedefine {
     }
 
     public static void redefine() {
-        new ByteBuddy().redefine(org.springframework.jdbc.datasource.DelegatingDataSource.class).visit(Advice.to(Decorator.class).on(ElementMatchers.named("setTargetDataSource"))).make().load(Thread.currentThread().getContextClassLoader(), ClassReloadingStrategy.fromInstalledAgent()).getLoaded();
+        new ByteBuddy()
+                .redefine(org.springframework.jdbc.datasource.DelegatingDataSource.class)
+                .visit(Advice.to(Decorator.class).on(ElementMatchers.named("setTargetDataSource")))
+                .make()
+                .load(Thread.currentThread().getContextClassLoader(), ClassReloadingStrategy.fromInstalledAgent())
+                .getLoaded();
     }
 
     static class Decorator {
