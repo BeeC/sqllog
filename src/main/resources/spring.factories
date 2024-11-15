@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.kuaishou.sqllog.DataSourceLookup
+
+# Application Context Initializers
+org.springframework.context.ApplicationContextInitializer=com.kuaishou.sqllog.DataSourceLookup
